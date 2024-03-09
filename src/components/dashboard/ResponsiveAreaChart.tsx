@@ -13,6 +13,8 @@ import {
 import { ChartTooltip } from "../../components/dashboard/ChartTooltip";
 import { IChartDatum } from "../../interfaces";
 import {grossSales, netReturn,convRate} from "./MOCK_DATA"
+import { Card, Skeleton,Select,Menu ,Button,MenuItem, Icon } from "@mui/material";
+
 
 
 type TResponsiveAreaChartProps = {
@@ -40,7 +42,7 @@ export const ResponsiveAreaChart = ({
 }: TResponsiveAreaChartProps) => {
   return (
     <ResponsiveContainer height={250}>
-     <LineChart
+     {data ? <LineChart
           width={200}
           height={200}
           data={data}
@@ -63,7 +65,9 @@ export const ResponsiveAreaChart = ({
            {selectedComp === 'Net Return' && <Line  type="monotone" name="Return" dataKey="value" data={netReturn?.data} stroke="#455a64"  strokeDasharray="10 10"  dot={false} />}
            {selectedComp === 'Gross Sales' && <Line  type="monotone" name="Sales" dataKey="value" data={grossSales?.data} stroke="#004d40"  strokeDasharray="10 10"  dot={false} />}
            {selectedComp === 'Conversion rate' &&<Line  type="monotone" name="Rate" dataKey="value" data={convRate?.data} stroke="#ef5350"  strokeDasharray="10 10"  dot={false} />}
-        </LineChart>
+        </LineChart> : 
+             <Skeleton variant="rectangular" width={1500} height={1500}  style={{borderRadius:'20px'}}/>}
+
     </ResponsiveContainer>
   );
 };

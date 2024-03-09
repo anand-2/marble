@@ -114,7 +114,6 @@ console.log(activeStatus,"active")
 
 
 
-const [title,setTitle] = useState(card)
   return (
     <div className="w-full mx-auto mb-4 flex flex-col justify-center items-stretch md:flex-row md:justify-between drop-shadow-md">
       <div className="w-full mx-auto md:flex-1 md:mr-2" style={{gap:'4rem',display:'flex',marginRight:'1rem'}}>

@@ -88,7 +88,7 @@ const handleCompSelect = (e:any) => {
 
   return (
     <>
- {data  ?  active &&  <div
+ {data ?  active &&  <div
       className="stat my-2 py-2 pr-0 flex-1 "  style={{width:'15rem',height:'70px',borderRadius:'10px',backgroundColor:title===card ? '#F1F1F1' : '#FFF'}}
     >     
        <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginRight:'1rem',}}><div className="CardTitle" onClick={(e)=>handleClick(e)} style={{cursor:'pointer'}}>{title}</div>
