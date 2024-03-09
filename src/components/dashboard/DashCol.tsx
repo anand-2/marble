@@ -109,6 +109,7 @@ function DashCol() {
             {card === 'Weekly Revenue' ?  <ResponsiveAreaChart
                                             kpi="Weekly revenue"
                                             data={memoizedRevenueData}
+                                            rev=''
                                             order = {memoizedOrdersData}
                                             newCust = {memoizedNewCustomersData}
                                             selectedComp = {selectedComp}
@@ -120,6 +121,7 @@ function DashCol() {
              : card === 'Weekly Orders'? <ResponsiveAreaChart
                                           kpi="Weekly Orders"
                                           data={memoizedOrdersData}
+                                          order=''
                                           rev = {memoizedRevenueData}
                                           newCust = {memoizedNewCustomersData}
                                           selectedComp = {selectedComp}
@@ -131,6 +133,7 @@ function DashCol() {
               : card === 'New Customers'? <ResponsiveAreaChart
                                             kpi="New Customers"
                                             data={memoizedNewCustomersData}
+                                            newCust=''
                                             rev = {memoizedRevenueData}
                                             order = {memoizedOrdersData}
                                             selectedComp = {selectedComp}
