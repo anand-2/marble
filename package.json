@@ -22,7 +22,11 @@
     ]
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
     "@heroicons/react": "^2.0.18",
+    "@mui/icons-material": "^5.15.12",
+    "@mui/material": "^5.15.12",
     "@refinedev/cli": "^2.16.26",
     "@refinedev/core": "^4.47.2",
     "@refinedev/inferencer": "^4.5.20",

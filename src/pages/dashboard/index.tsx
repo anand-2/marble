@@ -7,6 +7,7 @@ import { ResponsiveBarChart } from "../../components/dashboard/ResponsiveBarChar
 import { TabView } from "../../components/dashboard/TabView";
 import { RecentSales } from "../../components/dashboard/RecentSales";
 import { IChartDatum, TTab } from "../../interfaces";
+import Collapse from "../../components/dashboard/DashCol";
 
 const filters: CrudFilter[] = [
   {
@@ -54,59 +55,58 @@ export const Dashboard: React.FC = () => {
   const memoizedOrdersData = useMemoizedChartData(dailyOrders);
   const memoizedNewCustomersData = useMemoizedChartData(newCustomers);
 
-  const tabs: TTab[] = [
-    {
-      id: 1,
-      label: "Daily Revenue",
-      content: (
-        <ResponsiveAreaChart
-          kpi="Daily revenue"
-          data={memoizedRevenueData}
-          colors={{
-            stroke: "rgb(54, 162, 235)",
-            fill: "rgba(54, 162, 235, 0.2)",
-          }}
-        />
-      ),
-    },
-    {
-      id: 2,
-      label: "Daily Orders",
-      content: (
-        <ResponsiveBarChart
-          kpi="Daily orders"
-          data={memoizedOrdersData}
-          colors={{
-            stroke: "rgb(255, 159, 64)",
-            fill: "rgba(255, 159, 64, 0.7)",
-          }}
-        />
-      ),
-    },
-    {
-      id: 3,
-      label: "New Customers",
-      content: (
-        <ResponsiveAreaChart
-          kpi="New customers"
-          data={memoizedNewCustomersData}
-          colors={{
-            stroke: "rgb(76, 175, 80)",
-            fill: "rgba(54, 162, 235, 0.2)",
-          }}
-        />
-      ),
-    },
-  ];
+  // const tabs: TTab[] = [
+  //   {
+  //     id: 1,
+  //     label: "Daily Revenue",
+  //     content: (
+  //       <ResponsiveAreaChart
+  //         kpi="Daily revenue"
+  //         data={memoizedRevenueData}
+  //         colors={{
+  //           stroke: "rgb(54, 162, 235)",
+  //           fill: "rgba(54, 162, 235, 0.2)",
+  //         }}
+  //       />
+
+  //     ),
+  //   },
+  //   {
+  //     id: 2,
+  //     label: "Daily Orders",
+  //     content: (
+  //       <ResponsiveBarChart
+  //         kpi="Daily orders"
+  //         data={memoizedOrdersData}
+  //         colors={{
+  //           stroke: "rgb(255, 159, 64)",
+  //           fill: "rgba(255, 159, 64, 0.7)",
+  //         }}
+  //       />
+  //     ),
+  //   },
+  //   {
+  //     id: 3,
+  //     label: "New Customers",
+  //     content: (
+  //       <ResponsiveAreaChart
+  //         kpi="New customers"
+  //         data={memoizedNewCustomersData}
+  //         colors={{
+  //           stroke: "rgb(76, 175, 80)",
+  //           fill: "rgba(54, 162, 235, 0.2)",
+  //         }}
+  //       />
+  //     ),
+  //   },
+  // ];
 
   return (
     <>
-      <Stats
-        dailyRevenue={dailyRevenue}
-        dailyOrders={dailyOrders}
-        newCustomers={newCustomers}
-      />
-      <TabView tabs={tabs} />
+    
+
+      <Collapse></Collapse>
+      {/* <TabView tabs={tabs} /> */}
       <RecentSales />
     </>
   );
